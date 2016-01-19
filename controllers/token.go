@@ -5,7 +5,7 @@ import (
 	jwt "github.com/dgrijalva/jwt-go"
 	// "time"
 	"io/ioutil"
-	"net/http"
+	// "net/http"
 	"fmt"
 )
 
@@ -47,10 +47,8 @@ func (c *TokenController) CheckToken() {
     })
 
     if err == nil && token.Valid {
-        c.Ctx.WriteString("ok")
+        c.Ctx.WriteString("authorized")
     } else {
-    	fmt.Println(err)
-        c.Ctx.ResponseWriter.WriteHeader(http.StatusUnauthorized)
-
+    	c.Ctx.WriteString("Unauthorized")
     }
 }
