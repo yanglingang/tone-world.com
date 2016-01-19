@@ -1,4 +1,4 @@
-package main
+package weixin
 
 import (
 	// "encoding/hex"
@@ -49,6 +49,6 @@ func GetToken() (token string) {
 	}
 }
 
-func main() {
-	fmt.Println(GetToken())
-}
+// func main() {
+// 	fmt.Println(GetToken())
+// }
